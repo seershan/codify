@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codify</title>
+    <link rel="icon" type="image/x-icon" href="codify-logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.23.0/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.23.0/theme-monokai.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.23.0/theme-solarized_light.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <h1>{C}Codify</h1>
+            </div>
+            <div class="controls">
+                <select id="language-select">
+                    <option value="html-css-js">HTML/CSS/JS</option>
+                </select>
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="run-btn">
+                    <i class="fas fa-play"></i> Run
+                </button>
+                <button id="open-new-page-btn">
+                    <i class="fas fa-external-link-alt"></i> Open in New Page
+                </button>
+                <button id="save-btn">
+                    <i class="fas fa-save"></i> Save
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="editor-container">
+                <!-- HTML Editor -->
+                <div class="editor-wrapper" data-language="html">
+                    <div class="editor-header">
+                        <h2>HTML</h2>
+                        <div class="window-controls">
+                            <button class="minimize-btn" aria-label="Minimize"><i class="fas fa-minus"></i></button>
+                            <button class="maximize-btn" aria-label="Maximize"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <div class="editor" id="html-editor"></div>
+                </div>
+
+                <!-- CSS Editor -->
+                <div class="editor-wrapper" data-language="css">
+                    <div class="editor-header">
+                        <h2>CSS</h2>
+                        <div class="window-controls">
+                            <button class="minimize-btn" aria-label="Minimize"><i class="fas fa-minus"></i></button>
+                            <button class="maximize-btn" aria-label="Maximize"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <div class="editor" id="css-editor"></div>
+                </div>
+
+                <!-- JavaScript Editor -->
+                <div class="editor-wrapper" data-language="javascript">
+                    <div class="editor-header">
+                        <h2>JavaScript</h2>
+                        <div class="window-controls">
+                            <button class="minimize-btn" aria-label="Minimize"><i class="fas fa-minus"></i></button>
+                            <button class="maximize-btn" aria-label="Maximize"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <div class="editor" id="js-editor"></div>
+                </div>
+            </div>
+
+            <div class="output-container">
+                <div class="output-header">
+                    <h2>Output</h2>
+                    <div class="window-controls">
+                        <button class="minimize-btn" aria-label="Minimize"><i class="fas fa-minus"></i></button>
+                        <button class="maximize-btn" aria-label="Maximize"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div id="output-content"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Codify. All rights reserved.</p>
+            <p>Made with <i class="fas fa-heart"></i> by <a href="https://github.com/seershan" target="_blank">Seershan Mitra</a></p>
+        </footer>
+    </div>
+    <div id="loading-overlay" class="hidden">
+        <div class="spinner"></div>
+        <p>Executing code...</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
